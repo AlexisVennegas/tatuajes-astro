@@ -4,6 +4,8 @@ interface Props {
 }
 
 const { title } = Astro.props;
+import { ViewTransitions } from 'astro:transitions';
+
 ---
 
 <!doctype html>
@@ -18,34 +20,246 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
+        <ViewTransitions />
+
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+	
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.jim-nightshade-regular {
+    font-family: "Jim Nightshade", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+/* WRAPPER */
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+}
+
+/* HEADER */
+header {
+    position: relative;
+    z-index: 33;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: rgba(255, 255, 255, 0.336);
+}
+
+.img-container {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-header {
+    height: 60px;
+    view-transition-name: image-icon;
+}
+.menu {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.ul-menu-header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+li {
+    list-style: none;
+    margin-top: 10px;
+}
+li > a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Jim Nightshade', cursive;
+    transition: .3s;
+    margin-top: 12px;
+}
+li > a:hover {
+    color: red;
+    transition: .3s;
+}
+
+/* video */
+.video-container {
+    width: 100%;
+    height: 90%;
+    z-index: -1;
+}
+.video-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;    
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.3);
+}
+.logo-main {
+    position: absolute;
+    z-index: 1;
+    transform: translate(-50%, -45%);
+    left: 50%;
+    top: 50%;
+    width: 40%;
+    min-width: 700px;
+    view-transition-name: image-icon;
+}
+
+@media (width < 800px) {
+    .logo-main {
+        width: 70%;
+        min-width: auto;
+    }
+}
+
+::view-transition-old(root), ::view-transition-new(root) {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+
+@font-face {
+    font-family: "Jim Nightshade";
+    src: url("../Fonts/Jim_Nightshade/JimNightshade-Regular.ttf") format("truetype");
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.content-info {
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    width: 82%;
+    height: 50%;
+    display: flex;
+}
+.image {
+    width: 50%;
+    height: 100%;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img_tatuajes-slider-1 {
+    view-transition-name: image-tatuaje;
+}
+.image > img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    background: white;
+    view-transition-name: image-tatuaje;
+}
+.info {
+    width: 50%;
+    height: 100%;
+    border: 1px solid red;
+}
+h1 {
+    text-decoration: none;
+    color: white;
+    font-size: 2.5rem;
+    font-family: 'Jim Nightshade', cursive;
+    transition: .3s;
+    text-align: center;
+
+}
+p {
+    color: white;
+    margin: 10px 0;
+    padding: 20px;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: rgba(255, 255, 255, 0.336);
+}
+
+.img-container {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-header {
+    height: 60px;
+}
+.menu {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.ul-menu-header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+li {
+    list-style: none;
+    margin-top: 10px;
+}
+li > a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Jim Nightshade', cursive;
+    transition: .3s;
+    margin-top: 12px;
+}
+li > a:hover {
+    color: red;
+    transition: .3s;
+}
+
 </style>
