@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+export interface Props {
+    nametitle: string;
+}
+
+import { tatuajes } from "../data/tatuajes";
+// sacar la dirrecion de la url
+const url = new URL(Astro.url);
+// quitar el / 
+const nametitle = url.pathname.replace("/", "");
+
+const data = tatuajes.find(t => t.title === nametitle);
+if (!data) {
+    return Astro.redirect("/");
+}
+
+---
+
+<Layout title={nametitle}>
+   
+    <div class="wrapper">
+        <header class="header-Tatuajes">
+            <div class="img-container">
+                <a class="a-logo-header" href="./" >
+                    <img  class="logo-header" src="../../public/Img/amunet.png" alt="Amunet">
+                </a>
+            </div>
+            <nav class="menu">
+                <ul class="ul-menu-header">
+                    <li><a href="./Tatuajes">Tatuaje</a></li>
+                    <li><a href="./About">About</a></li>
+                    <li><a href="./Services">Services</a></li>
+                    <li><a href="./Contact">Contact</a></li>
+                    <li><a href="./">morefuture</a></li>    
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div class="content-info">
+                <div class="image">
+                    <img class={`imagenLocal secondpage-${data.id}`} src={data.img} alt="">
+                </div>
+                <div class="info">
+                    <h1 class={`title-${data.id}`}>{data.title}</h1>
+                    <p>{data.desc}</p>
+                    <div class="finally-div">
+                        <img src="../../public/Img/amunet.png" alt="logo" class="final-logo">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>

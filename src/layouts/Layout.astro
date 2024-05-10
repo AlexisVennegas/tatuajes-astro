@@ -19,6 +19,7 @@ import { ViewTransitions } from 'astro:transitions';
 		<title>{title}</title>
 	</head>
 	<body>
+      
 		<slot />
         <ViewTransitions />
 
@@ -129,6 +130,68 @@ li > a:hover {
     view-transition-name: image-icon;
 }
 
+.first-page-tatuaje-1 {
+    view-transition-name: first-tatuaje;
+}
+.first-page-tatuaje-2 {
+    view-transition-name: second-tatuaje;
+}
+.first-page-tatuaje-3 {
+    view-transition-name: third-tatuaje;
+}
+.first-page-tatuaje-4 {
+    view-transition-name: fourth-tatuaje;
+}
+.first-page-tatuaje-5 {
+    view-transition-name: fifth-tatuaje;
+}
+.first-page-tatuaje-6 {
+    view-transition-name: sixth-tatuaje;
+}
+.first-page-tatuaje-7 {
+    view-transition-name: seventh-tatuaje;
+}
+.first-page-tatuaje-8 {
+    view-transition-name: eighth-tatuaje;
+}
+.first-page-tatuaje-9 {
+    view-transition-name: ninth-tatuaje;
+}
+.first-page-tatuaje-10 {
+    view-transition-name: tenth-tatuaje;
+}
+.secondpage-tatuaje-1 {
+    view-transition-name: first-tatuaje;
+}
+.secondpage-tatuaje-2 {
+    view-transition-name: second-tatuaje;
+}
+.secondpage-tatuaje-3 {
+    view-transition-name: third-tatuaje;
+}
+.secondpage-tatuaje-4 {
+    view-transition-name: fourth-tatuaje;
+}
+.secondpage-tatuaje-5 {
+    view-transition-name: fifth-tatuaje;
+}
+.secondpage-tatuaje-6 {
+    view-transition-name: sixth-tatuaje;
+}
+.secondpage-tatuaje-7 {
+    view-transition-name: seventh-tatuaje;
+}
+.secondpage-tatuaje-8 {
+    view-transition-name: eighth-tatuaje;
+}
+.secondpage-tatuaje-9 {
+    view-transition-name: ninth-tatuaje;
+}
+.secondpage-tatuaje-10 {
+    view-transition-name: tenth-tatuaje;
+}
+
+
 @media (width < 800px) {
     .logo-main {
         width: 70%;
@@ -154,18 +217,21 @@ li > a:hover {
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    background-color: #000;
+}
 .wrapper {
     width: 100%;
-    height: 100vh;
+    height: auto;
     background-color: #000;
-    overflow: hidden;
+   
 }
 section {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 .content-info {
     border: none;
@@ -177,25 +243,20 @@ section {
 .image {
     width: 50%;
     height: 100%;
-    border: 1px solid white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.img_tatuajes-slider-1 {
-    view-transition-name: image-tatuaje;
-}
+
 .image > img {
     width: 80%;
     height: 80%;
     object-fit: cover;
     background: white;
-    view-transition-name: image-tatuaje;
 }
 .info {
     width: 50%;
     height: 100%;
-    border: 1px solid red;
 }
 h1 {
     text-decoration: none;
@@ -256,10 +317,57 @@ li > a {
     font-family: 'Jim Nightshade', cursive;
     transition: .3s;
     margin-top: 12px;
+    
 }
 li > a:hover {
     color: red;
     transition: .3s;
 }
+.finally-div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
 
+.finally-div > img {
+    width: 30%;
+}
+.after-title-tatuaje-1 {
+    view-transition-name: title-1;
+}
+.after-title-tatuaje-2 {
+    view-transition-name: title-2;
+}
+.after-title-tatuaje-3 {
+    view-transition-name: title-3;
+}
+.after-title-tatuaje-4 {
+    view-transition-name: title-4;
+}
+.after-title-tatuaje-5 {
+    view-transition-name: title-5;
+}
+.after-title-tatuaje-6 {
+    view-transition-name: title-6;
+}
+.title-tatuaje-1 {
+    view-transition-name: title-1;
+}
+.title-tatuaje-2 {
+    view-transition-name: title-2;
+}
+.title-tatuaje-3 {
+    view-transition-name: title-3;
+}
+.title-tatuaje-4 {
+    view-transition-name: title-4;
+}
+.title-tatuaje-5 {
+    view-transition-name: title-5;
+}
+.title-tatuaje-6 {
+    view-transition-name: title-6;
+}
 </style>
