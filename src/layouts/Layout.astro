@@ -242,16 +242,15 @@ section {
     display: flex;
 }
 .image {
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .image > img {
     width: 80%;
-    height: 80%;
+    height: 50%;
     object-fit: cover;
     background: white;
 }
@@ -447,7 +446,12 @@ li > a:hover {
     width: 90%;
     height: 90%;
     display: flex;
+    flex-direction: column;
     }
+    .info {
+    width: 100%;
+    height: 100%;
+}
     
 }
 .desactive {
@@ -455,19 +459,3 @@ li > a:hover {
 }  
 
 </style>
-<script>
-    const buttonMenu = document.querySelector('.menu-img');
-
-    buttonMenu.addEventListener('click', () => {
-        const menu = document.querySelector('.desplegable');
-        menu.classList.toggle('activate');
-        buttonMenu.src = menu.classList.contains('activate') ? '../../public/cancelar.png' : '../../public/Img/menu.png';
-        // si esta activo y el tamaño de la pantalla es mayor a 768px desactivar el despelgable
-        if (menu.classList.contains('activate') && window.innerWidth > 768) {
-            menu.classList.remove('activate');
-            buttonMenu.src = '../../public/Img/menu.png';
-        }
-    }
-    )
-
-</script>
