@@ -42,8 +42,8 @@ import Layout from '../layouts/Layout.astro';
 				</nav>
 			</header>
 			<main class="video-container">
-				<img class="logo-main" src="img/amunet.png" alt="Amunet">
-				<video class="video-background" src="img/video.mp4" autoplay muted></video>
+				<img class="logo-main" src="./img/amunet.png" alt="Amunet">
+				<video class="video-background" src="./img/video.mp4" autoplay muted></video>
 			</main>
 		</div>
 	</main>
@@ -59,7 +59,7 @@ import Layout from '../layouts/Layout.astro';
     buttonMenu.addEventListener('click', () => {
         const menu = document.querySelector('.desplegable');
         menu.classList.toggle('activate');
-        buttonMenu.src = menu.classList.contains('activate') ? '../../public/cancelar.png' : '../../public/Img/menu.png';
+        buttonMenu.src = menu.classList.contains('activate') ? './img/cancelar.png' : './img/menu.png';
         // si esta activo y el tamaño de la pantalla es mayor a 768px desactivar el despelgable
         if (menu.classList.contains('activate') && window.innerWidth > 768) {
             menu.classList.remove('activate');
