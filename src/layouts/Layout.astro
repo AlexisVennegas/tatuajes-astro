@@ -17,6 +17,7 @@ import { ViewTransitions } from 'astro:transitions';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+        <script src="../data/nav.js"></script>
 	</head>
 	<body>
       
@@ -370,4 +371,87 @@ li > a:hover {
 .title-tatuaje-6 {
     view-transition-name: title-6;
 }
+.menu-img {
+    display: none;
+}
+.desplegable {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    visibility: hidden;
+    z-index: 4;
+    background: #ff000066;
+    bottom: 0;
+    left: -100%;
+    transition: .2s;
+}
+.activate {
+    display: block;
+    left: 0;
+    visibility: visible;
+    transition: .3s;
+}
+.ul-menu-header-mobile {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ul-menu-header-mobile > li {
+    margin-top: 10px;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  
+    justify-content: center;
+}
+ 
+@media (width < 800px) {
+    .ul-menu-header {
+        display: none;
+    }
+    .img-container {
+    display: none;
+    }
+    .menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    }
+    .menu-img {
+    display: block;
+    width: 10%;
+    margin: 10px 30px 10px 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 44;
+    }
+    .imagenes-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+    .imagenes-li  {
+    width: 100% !important;
+    height: 100%;
+    }
+    .content-info {
+    border: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    width: 90%;
+    height: 90%;
+    display: flex;
+    }
+    
+}
+.desactive {
+    display: none ;
+}  
+
 </style>
